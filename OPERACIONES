@@ -1,0 +1,29 @@
+// suma.cpp : Defines the entry point for the console application.
+//fecha: 20-08-2015
+//Autor: Thalia Simsovic
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int A,B,C,D,E,F;
+	cout <<"ingrese el primer valor:";
+	cin >> A;
+	cout <<"ingrese el segundo valor:";
+	cin >> B;
+	C=A+B;
+	D=A-B;
+	E=A*B;
+	F=A/B;
+	cout << "el resultado de la suma es:" <<C << endl;
+	cout << "el resultado de la resta es:" <<D << endl;
+	cout << "el resultado de la multiplicacion es:" <<E << endl;
+	cout << "el resultado de la division es:" <<F << endl;
+	getch();
+
+
+}
