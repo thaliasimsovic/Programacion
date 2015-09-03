@@ -1,0 +1,34 @@
+// areas.cpp : Defines the entry point for the console application.
+// Nombre: Thalia Simsovic
+// Fecha: 03 - 09 - 15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+//librerias
+
+using namespace std;
+
+void main()
+	//cuerpo principal
+{
+	float a, b, h;   
+	//declaracion de variables
+	cout<<"ingrese la base: ";
+	//mensaje al usuario
+	cin>> b; 
+	//ingreso de datos						
+	cout<<"ingrese la altura: ";
+	//mensaje al usuario
+	cin>> h;
+	//ingreso de datos
+	a=(b*h)/2;
+	//calculo del area
+	cout<<"el area del triangulo es: "<< a;
+	//mensaje al usuario del dato preciso del calculo
+	getch();
+	//detiene la pantalla para que el programa no se cierre automaticamente
+}
+
+
+
