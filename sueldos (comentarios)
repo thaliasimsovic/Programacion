@@ -1,0 +1,48 @@
+// sueldos.cpp : Defines the entry point for the console application.
+// Autor: Thalia Simsovic / herlan  catala
+// Fecha:3-09-15
+// objetivo: el programa pide el ingreso del numero de empleados, las horas trabajadas, el pago por hora y luego imprime el sueldo que deberia tener el trabajor.
+
+#include"stdafx.h"
+#include<iostream>
+#include"conio.h"
+//librerias
+
+using namespace std;
+//para que la entrada sea el teclado y la salida el monitor
+
+void main() 
+	//cuerpo principal
+{
+   int a, b, c, h;
+   //declaracion de variables
+   float sueldo;
+   //declaracion de variables
+   float i;
+   //declaraion de variables
+   cout << "Ingrese el numero de empleados: " << endl;
+   //mensaje al usuario
+   cin >> a;
+   //ingreso de datos
+   for (h=1;h<=a;h++) // esta es la nueva funcion: el for se utiliza como ciclo repetitivo lo que hace es volver a pedir los datos por la cantidad de empleados
+	                  //inicializa la variable= 1, plantea la condicion logica del ciclo mientras <= hasta ejecutar el ciclo completo,
+					  //por ultimo especifica el incremento de la variable numero++
+   {
+     cout << "Ingrese las horas trabajadas: " << endl;
+	 //mensaje al usuario
+     cin >> b;
+	 //ingreso de datos
+     cout << "Ingrese el pago por hora: " << endl;
+	 //mensaje al usuario
+     cin >> c;
+	 //ingreso de datos
+     i = 0.13;
+	 //contador 
+     sueldo = (c*b)-((c*b)*i);
+	 //calculos
+     cout << "El sueldo es: " << sueldo << endl;
+	 //mensaje al usuario con el calculo
+   }
+   getch();
+   //detiene la pantalla
+}
