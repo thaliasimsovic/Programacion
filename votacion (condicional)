@@ -1,0 +1,22 @@
+// condicionales1.cpp : Defines the entry point for the console application.
+// Autor: thalia simsovic
+// fecha: 10 - 09 - 15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int A;
+	cout <<"ingrese la edad :"<< endl;
+	cin  >>A;
+	if (A>=18)
+		cout<< "si puede votar;" << endl;
+	else 
+	    cout<< "no puede votar;" << endl;
+	getch();
+
+}
