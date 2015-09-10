@@ -1,0 +1,30 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main();
+{
+	float a, b, c;
+	cout <<"ingrese tres numeros:" << endl;
+	cin >>a>>b>>c;
+	
+		if ((a==b) && (b==c) && (a==c))
+		    cout<<"el valor de los tres numeros es igual": << endl;
+		if ((a>b) && (a>c))
+		    cout<<"a es el mayor:" << a<<endl;
+		else
+			cout<<"a es el menor:" << a<<endl;
+		if ((b>a) && (c<b))
+		    cout<<"b es el mayor:" << b<<endl;
+		else 
+			cout<<"b es el menor:" << b<<endl;
+        if ((c>a) && (b<c))
+		    cout<<"c es el mayor:" << c<<endl;
+		else
+			cout<<"c es el menor:" << c<<endl;
+			
+		getch();
+}
+
