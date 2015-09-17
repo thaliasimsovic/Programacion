@@ -1,0 +1,26 @@
+// ciclosrepetitivos.cpp : Defines the entry point for the console application.
+//autor: thalia simsovic
+//feche: 17/09/15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main()
+{
+	float b,h,a,p;
+	char resp;
+	do
+	{
+	  cout<<endl<<"ingrese la base:" ;
+	  cin>> b;
+	  cout<< "ingrese la altura:" ;
+	  cin>>h;
+	  p=(b*h)/2;
+	  cout<<"el area es:" <<p;
+	  cout<< endl <<"desea continuar: (y)es";
+	  cin>>resp;
+	} while (resp == 'y');
+	getch();
+	}
+
