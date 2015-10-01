@@ -1,0 +1,38 @@
+// impuesto AFP.cpp : Defines the entry point for the console application.
+//autor: thalia simsovic
+//fecha: 01-10-15
+
+#include"stdafx.h"
+#include<iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	double s;
+	double n;
+	double AFP;
+	double i;
+	int acumulador=0;
+	cout << "ingrese cuantos emplados trabajan en la empresa;" << endl;
+	cin >> n;
+	for (i=1;i<=n;i++)
+	{
+		cout << "ingrese el sueldo del empleado:" << endl;
+		cin >> s;
+		if (s>=3312) 
+		{
+			AFP = s*0.121;
+		} else 
+		{
+			AFP = s*0.03;
+		}
+		cout << "el monto a pagar de la AFP es:" << AFP << endl;
+		acumulador=acumulador+AFP;
+			
+	}
+	cout<<"el monto total a pagar de AFP es:" <<acumulador <<endl;
+
+	getch ();
+}
