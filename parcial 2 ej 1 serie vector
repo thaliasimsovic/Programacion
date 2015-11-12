@@ -1,0 +1,46 @@
+// parcial ej 1.cpp : Defines the entry point for the console application.
+//autor:thalia simsovic	
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#define MAX 100
+
+using namespace std; 
+
+int cargar (int vec[],int n);
+void mostrar (int vec[] ,int n);
+void main()
+{
+   int n,s,sig;
+   int vec[MAX];
+   cout<<"ingrese la cantidad de numeros:";
+   cin>>n;
+   s=cargar(vec,n);
+   mostrar(vec,s);
+   getch();
+}
+ 
+int cargar (int vec[],int n)
+{
+	int sig,j;
+     sig=-1;
+	j=0;
+	for(int i=2; i<=n;i=i+2)
+    {
+      vec[j]=(sig*i);
+      sig=-sig;
+	  j=j+1;
+	}
+	return j;
+}
+
+void mostrar (int vec[] ,int n)
+{
+	for(int i=0;i<n;i=i++)
+
+	cout<<"vec["<<i<<"]="<<vec[i]<<endl;
+}
+
