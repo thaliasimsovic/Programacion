@@ -1,0 +1,161 @@
+/ parcial 3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+#define MAX 1000
+
+using namespace std;
+
+void cargar (double a[], int tamano);
+void mostrar (double a[], int tamano);
+int cercano (double a[], int n, double x);
+void fibonacci (int n);
+void menu();
+double opcion1 (double x, double y);
+int opcion2 (int x, int y);
+int opcion3 (double x);
+
+void main ()
+{
+	int option, n;
+	double v[MAX],x;
+	do{
+		cout<<"\t\t MENU \n\n";
+		cout<<"1. Encontrar el mayor cercano\n\n";
+		cout<<"2. Problemas matematicos \n\n";
+		cout<<"3. Fibonacci\n\n";
+		cout<<"O. Salir del programa\n\n";
+		cout<<"Opcion: ";
+		cin>>option;
+		switch(option){
+		case 1:
+			cout<<"Introduzca el numero de elementos a comparar: ";
+			cin>>n; 
+			cout<<"Introduzca que elemento comparar: ";
+	        cin>> x;
+			cargar (v, n);
+			cout<<"el mayor es:"<<cercano(v, n, x);
+			break;
+		case 2:
+			menu();
+			break;
+		case 3:
+			cout<<"Ingrese hasta que numero quiere que aparezca su FIBONACCI: ";
+			cin>>n;
+			fibonacci(n);
+			break;
+		case 0:
+			cout<<"Saliendo del programa";
+			break;
+		default: 
+			break;
+		}
+		getch();
+		system("cls");
+	}while(option!=0);
+	getch();
+}
+
+void cargar (double a[], int tamano){
+	for(int i=0; i<tamano; i++){
+		cout<<"a["<<i<<"] ";
+		cin>>a[i];
+	}
+}
+void mostrar (double a[], int tamano){
+	for(int i=0; i<tamano; i++)
+		cout<<"a["<<i<<"] "<<a[i]<<endl;
+}
+int cercano(double a[], int n, double x)
+{
+	double  b[MAX];
+	int c;
+	for(int i=0; i<n;i++)
+	{
+		if(a[i]>x){
+	    	b[c]=a[i];
+			c++;
+		}
+	}
+	int aux=b[0];
+	for (int i=0;i<c;i++)
+		if(b[i]<aux)
+			aux=b[i];
+	return aux;
+}
+void fibonacci(int n)
+{
+	double a[MAX], c=0;
+	int i=0;
+	int j=0;
+	a[0]=i;
+	a[1]=j;
+	for(int i=0;i<MAX;i++)
+		if(a[i]<n)
+		{
+			a[i]=a[i-1]+a[i-2];
+		}
+		for (int i=0;i<50;i++)
+	cout<<a[i]<<endl;
+}
+
+	
+void menu(){
+	int opcion;
+	double x, y;
+	do{
+		cout<<"\t\t MENU \n\n";
+		cout<<"1. Encontrar Raix cuadrada de x*x + y*y \n\n";
+		cout<<"2. Encontrar module entre x % y\n\n";
+		cout<<"3. Hallar seno de angulo en radianes\n\n";
+		cout<<"O. Volver del programa\n\n";
+		cout<<"Opcion: ";
+		cin>>opcion;
+		switch(opcion){
+			case 1:
+				cout<<"Ingrese el valor de x: ";
+				cin>>x;
+				cout<<"Ingrese el valor de y: ";
+				cin>>y;
+				cout<<"la raiz cuadrada es:"<<opcion1(x,y)<<endl;
+				break;
+			case 2:
+				cout<<"Ingrese el valor de x: ";
+				cin>>x;
+				cout<<"Ingrese el valor de y: ";
+				cin>>y;
+				cout<<"el modulo es:"<<opcion2(x,y)<<endl;
+				break;
+			case 3:
+				cout<<"Ingrese el valor del angulo en radianes: ";
+				cin>>x;
+				cout<<"el seno es:"<<opcion3(x)<<endl;
+				break;
+			case 0:
+				cout<<"Volviendo al menu anterior";
+				break;
+			default:
+				break;
+				}
+			getch();
+			system("cls");
+		}while(opcion!=0);
+	getch();
+}
+double opcion1 (double x, double y)
+{
+	return sqrt(pow(x,2)+pow(y,3));
+	
+}
+int opcion2 (int x, int y)
+{
+	return x%y;
+}
+int opcion3 (double x)
+{
+	return sin(x/6.2432);
+}
