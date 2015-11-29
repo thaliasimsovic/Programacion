@@ -1,0 +1,525 @@
+// asdf.cpp : Defines the entry point for the console application.
+//Integrantes: Jorge Paz,Thalia simsovic, nicole ayupe, fabiana eguez
+
+#include <iostream>
+#include "stdlib.h"
+#include "stdio.h"
+#include "conio.h"
+#include "time.h"
+using namespace std;
+int funcion();
+int funciones();
+//int menu ();
+int menu();
+int preguntasvideojuegos();
+int preguntasmatematicas();
+int preguntaspsicologia();
+int preguntasUpsa();
+int preguntasmusica();
+void main ()
+{
+int numero, totales,cont,R;
+cout<<" Bienvenido al programa Preguntados! \n Reglas: Automaticamente se generaran de manera aleatoria las\n preguntas solo debe ingresar el numero con la respuesta correcta y validar presionando enter \n";
+//cont=0;
+//numero=menu();
+R=menu();
+totales=funciones();
+getch();
+}
+int funcion()
+{int numero;
+do{
+srand (time(NULL));
+for (int x=0;x<1;x++){
+numero = ((1 + rand()) % 6);
+}
+}while(numero == 0);
+return (numero);
+}
+int funciones()
+{int vuelta;
+srand (time(NULL));
+for (int x=0;x<6;x++){
+vuelta = (1 + rand()) % 6;}
+return (vuelta);
+}
+int menu ()
+{int pregunta,opc,cont,a,R;
+cont=0;
+cout<<"\n CATEGORIAS \n\n 1-Videojuegos \n 2-Matematicas \n 3-Psicologia \n 4-Geografia de Bolivia \n 5-Musica";
+getch();
+pregunta = funcion();
+R=0;
+do{
+   switch(pregunta)
+     {
+      case 1:
+         a=preguntasvideojuegos();
+		break;
+      case 2:
+         a=preguntasmatematicas();
+		break;
+      case 3:
+         a=preguntaspsicologia();
+		break;
+      case 4:
+        a=preguntasUpsa();
+		break;
+      case 5:
+        a=preguntasmusica();
+		break;
+     }
+R=a+R;
+pregunta = funcion();
+cont=cont+1;
+cout<<"\n\n su puntaje es "<<R<<" de "<<cont;
+}while(cont<10);
+cout<<"\n\n Su puntaje Final es "<<R<<" de 10"<<cont;
+if(R==1 || R==2)
+{cout<<"\n Rendimiento pesimo";
+}
+else
+  {if(R==3 || R==4)
+  {cout<<"\n Rendimiento malo";}
+  else
+    {if(R==5 || R==6)
+    {cout<<"\n Puedes mejorar";}
+    else
+       {if(R==7 || R==8)
+       {cout<<"\n Muy Bien";}
+       else
+          {if(R==9 || R==10)
+          {cout<<"\n Excelente, eres muy bueno en este juego";}
+          }
+       }
+    }
+  }
+return(R);
+}
+int preguntasvideojuegos()
+{int Np,opc,resultados,pregunta,R;
+ pregunta = funcion();
+ if (pregunta ==1)
+  {cout<<"\n\n Seccion Videojuegos \n";
+   Np=funciones();
+   switch (Np)
+     {case 0:
+       do{
+          cout<<"\n Cual es el personaje principal de Mario Bros? \n 1-Mario \n 2-Luigi \n 3-Princesa Peach \n";   
+		  cin>>opc;
+         }while(opc<1||opc>3);
+       if(opc==1)
+         {cout<<"CORRECTO";
+	   R=1;}
+       else 
+         {cout<<"INCORRECTO";
+	   R=0;}
+       break; 
+     case 1:
+       do{
+          cout<<"\n Cuantos fantasmas hay en el juego Pacman Clasico? \n 1- 3 fantasmas \n 2- 6 fantasmas \n 3- 4 fantasmas \n";   
+          cin>>opc; 
+		  
+         }while(opc<1||opc>3);
+       if(opc==3)
+         {cout<<"CORRECTO";
+	   R=1;}
+       else 
+         {cout<<"INCORRECTO";
+	   R=0;}
+       break; 
+     case 2:
+       do{
+          cout<<"\n Del juego 'Sonic the hedgehog' que color es Sonic? \n 1- Amarillo \n 2- Azul \n 3- Naranja \n";   
+          cin>>opc; 
+		  }while(opc<1||opc>3);
+       if(opc==2)
+         {cout<<"CORRECTO";
+	   R=1;}
+       else 
+         {cout<<"INCORRECTO";
+	   R=0;}
+       break;
+	   case 3:
+       do{
+          cout<<"\n Cual es el personaje principal de Legend of Zelda? \n 1-Link \n 2-Princesa Zelda \n 3-Princesa Link \n";   
+		  cin>>opc;
+		  }while(opc<1||opc>3);
+       if(opc==1)
+         {cout<<"CORRECTO";
+	   R=1;}
+       else 
+         {cout<<"INCORRECTO";
+	   R=0;}
+       break; 
+     case 4:
+       do{
+          cout<<"\n A que compania pertenece la saga de consolas play station? \n 1- Windows \n 2- Samsung \n 3- Sony \n";   
+          cin>>opc; 
+		  }while(opc<1||opc>3);
+       if(opc==3)
+         {cout<<"CORRECTO";
+	   R=1;}
+       else 
+         {cout<<"INCORRECTO";
+	   R=0;}
+       break; 
+     case 5:
+       do{
+          cout<<"\n Que arrojaba Donkey Kong en el videojuego Donkey Kong Country? \n 1- Bananas \n 2- Barriles \n 3- Cocos \n";   
+          cin>>opc; 
+		 }while(opc<1||opc>3);
+       if(opc==2)
+         {cout<<"CORRECTO";
+	   R=1;}
+       else 
+         {cout<<"INCORRECTO";
+	   R=0;}
+       break;
+    }
+resultados=1;
+getch();
+return (R);
+}
+}
+int preguntasmatematicas()
+{int Np,opc,resultados,pregunta,R;
+ pregunta = funcion();
+ if (pregunta ==2)
+{cout<<"\n\n Seccion matematicas \n";
+ Np=funciones();
+ switch (Np)
+{case 0:
+do{
+cout<<"\n Que triangulo tienen sus tres lados iguales? \n 1- T.Rectangulo \n 2- T.Equilatero \n 3- T.Isosceles \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 1:
+do{
+cout<<"\n Cuanto es factorial de 7? \n 1- 5040 \n 2- 5400 \n 3- 5004 \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 2:
+do{
+cout<<"\n Cuantas figuras conicas existen? \n 1- tres \n 2- seis \n 3- cuatro \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==3)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break;
+case 3:
+do{
+cout<<"\n Que teorema se aplica en la resolucion de triangulos rectangulos? \n 1- T.de los senos \n 2- Pitagoras \n 3- T.de los cosenos \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 4:
+do{
+cout<<"\n Cuantos tipos de soluciones puede tener una ecuacion cuadratica? \n 1- Tres \n 2- cinco \n 3- dos \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 5:
+do{
+cout<<"\n Cuanto mide la suma de los angulos internos de un triangulo? \n 1- 90 grados \n 2- Depende del triangulo \n 3- 180 grados \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==3)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break;
+}
+resultados=1;
+getch();
+return (R);
+}
+}
+int preguntaspsicologia()
+{int Np,opc,resultados,pregunta,R;
+ pregunta = funcion();
+ if (pregunta ==3)
+{cout<<"\n\n Seccion psicologia \n";
+ Np=funciones();
+ switch (Np)
+{case 0:
+do{
+cout<<"\n Quien es el padre del psicoanalisis? \n 1- Simpson \n 2- Freud \n 3- Pavlov \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 1:
+do{
+cout<<"\n En cuantas fases esta dividida la piramide de Maslow? \n 1- Cinco \n 2- Seis \n 3- Tres \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 2:
+do{
+cout<<"\n Quien es el padre psicologia? \n 1- Wilhem Wundt \n 2- Sigmund Freud \n 3- Ivan Pavlov \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 3:
+do{
+cout<<"\n Quien es el padre del conductismo? \n 1- Skinner \n 2- J. Watson \n 3- Kantor \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 4:
+do{
+cout<<"\n Cuantos tipos de inteligencia existen segun Howard Gardner? \n 1- Ocho \n 2- cinco \n 3- Dos \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 5:
+do{
+cout<<"\n Como se llamo la hija de Sigmund Freud, que centro su investigacion en la psicologia infantil? \n 1- Anna Freud \n 2- Virginia Freud \n 3- Mathilde Freud \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+}
+getch();
+resultados=1;
+return (R);
+}
+}
+int preguntasUpsa()
+{int Np,opc,resultados,pregunta,R;
+ pregunta = funcion();
+ if (pregunta ==4)
+{cout<<"\n\n Seccion Upsa \n";
+ Np=funciones();
+ switch (Np)
+{case 0:
+do{
+cout<<"\n Cuando fue fundada la Upsa? \n 1- 12 de Marzo de 1984 \n 2- 12 de Mayo de 1984 \n 3- 12 de Febrero de 1984 \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 1:
+do{
+cout<<"\n Cual de estos docentes no da la materia F.de matematicas? \n 1- Simoni \n 2- Bojanic \n 3- Arce \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 2:
+do{
+cout<<"\n Cual sanitario es el mas sucio de la Upsa? \n 1- El de Hombres \n 2- El de Mujeres \n 3- El de Docentes \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break;
+case 3:
+do{
+cout<<"\n Cuantas Facultades tiene la Upsa? \n 1- Cinco \n 2- Cuatro \n 3- Seis \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 4:
+do{
+cout<<"\n Cuantas carreras ofrecia la universidad al momento de su fundacion? \n 1- Cuatro \n 2- Diez \n 3- Ocho \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 5:
+do{
+cout<<"\n Cuantas carreras tiene actualmente la UPSA? \n 1- Veinte \n 2- Veintidos \n 3- Diecinueve \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break;
+}
+resultados=1;
+getch();
+return (R);
+}
+}
+int preguntasmusica()
+{int Np,opc,resultados,pregunta,R;
+ pregunta = funcion();
+ if (pregunta ==5)
+{cout<<"\n\n Seccion musica \n";
+ Np=funciones();
+ switch (Np)
+{case 0:
+do{
+cout<<"\n Cuantos integrantes conformaban 'The Beatles'? \n 1- Cuatro \n 2- Cinco \n 3- Tres \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 1:
+do{
+cout<<"\n De que color era la piel de Michael Jackson? \n 1- Negra \n 2- Blanca \n 3- Canelita pasion \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 2:
+do{
+cout<<"\n Cual es el artista mas conocido de Santa Cruz? \n 1- Guisela Santa Cruz \n 2- Gladys Moreno \n 3- Los Cambitas \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 3:
+do{
+cout<<"\n Quien es considerado 'El rey del rock'n roll? \n 1- Elvis Presley \n 2- Paul McCartney \n 3- Jhon Lennon \n";   
+cin>>opc;
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 4:
+do{
+cout<<"\n A que familia de instrumentos pertenece la flauta? \n 1- Viento \n 2- Percusion \n 3- De cuerdas \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==1)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break; 
+case 5:
+do{
+cout<<"\n Cuantas notas tiene una escala musical pentatonica? \n 1- Seis \n 2- Cinco \n 3- No existe esa escala \n";   
+cin>>opc; 
+}while(opc<1||opc>3);
+if(opc==2)
+{cout<<"CORRECTO";
+R=1;}
+else 
+{cout<<"INCORRECTO";
+R=0;}
+break;
+}
+resultados=1;
+getch();
+return (R);
+}
+}
+	
