@@ -1,0 +1,40 @@
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int cantidadDigitos(int n)
+{
+	int c=0;
+	while (n>0)
+	{
+		n = n/10;
+
+		c++;
+	}
+
+	return (c);
+
+}
+ 
+
+void main()
+{
+	int nro,r;
+
+	do{
+		
+	cout<<"introducir un numero:";
+	cin>> nro;
+	if(n<1){
+		cout<<"el numero esta incorrecto debe ingresar un numero natural:"<<endl;
+	}
+	}while(nro < 1);
+
+	
+
+
+    r=cantidadDigitos (nro);
+	cout<<"la cantidad de digitos es:" <<nro<<r;
+	getch();
+}
