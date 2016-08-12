@@ -1,0 +1,85 @@
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int cantidadDigitos (int n);
+int suma (int n);
+
+
+
+void main()
+
+	do{
+		cout<<" MENU " <<endl;
+		cout<<" 1. contar la cantidad de digitos" <<endl;
+		cout<<" 2. suma de digitos" <<endl;
+		cout<<" 3. salir del programa" <<endl;
+		cout<<" opcion:";
+		cin>>opcion;
+
+		switch(opcion)
+		{
+		  case 1:do{
+		
+	        cout<<"introducir un numero:";
+	        cin>> nro;
+	        if(n<1){
+		    cout<<"el numero esta incorrecto debe ingresar un numero natural:"<<endl;
+	               }
+	          }while(nro < 1);
+
+			  r=cantidadDigitos (nro);
+	          cout<<"la cantidad de digitos es:" <<nro<<r;
+		}
+		break;
+
+		case 2:{
+			int nro,r,n,s,i;
+
+	do{
+		
+	cout<<"introducir un numero:";
+	cin>> nro;
+	if(n<1){
+		cout<<"el numero esta incorrecto debe ingresar un numero natural:"<<endl;
+	}
+	}while(nro < 1);
+
+	s=suma(n);
+	cout<<"la suma de los digitos es:"<<s<<endl;
+	getch();
+}
+break;
+getch();
+		system("cls");
+	}while (opcion!=0);
+	getch();
+
+}
+
+
+int cantidadDigitos(int n)
+
+{
+	int c=0;
+	while (n>0)
+	{
+		n = n/10;
+
+		c++;
+	}
+
+	return (c);
+
+}
+
+int suma (int n)
+{
+  int s;
+  s=0;
+  for (int i=1;i<=n;i++)
+	  s=s+i;
+  return(s);
+
+}
